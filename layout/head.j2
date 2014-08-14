@@ -42,11 +42,9 @@
 			      var currentPage = urlArray[urlArray.length-1];
 			      currentPage = currentPage.replace(".html", "")
 			      currentPage = currentPage.replace(/-/g, " ")
-			      console.log("Current page is: " + currentPage);
 			      $('.nav li a').each(function(){
 			        value = $(this).text().toLowerCase();
 			        value = value.replace(".html", "");
-			        console.log("value is: "+value)
 			        if (currentPage=='') {
 			        	$('.nav li.home').addClass('active')
 			        	return false;

@@ -26,29 +26,32 @@ html {
         content: "";
         display: block; }
       html body .main p {
-        font-size: 1.1em; }
+        font-size: 1.1em;
+        line-height: 1.5em; }
     html body footer, html body .main:after {
       height: 150px; }
 
 header {
-  background-color: #1D4971;
-  border-bottom: 4px solid #02213d; }
+  background-color: #fff;
+  border-bottom: 4px solid #02213d;
+  padding: 30px 0 15px 0; }
   header img.header_logo {
     float: left; }
   header nav.navbar {
     float: left;
-    margin: 47px 0 0 0; }
+    width: 68%;
+    margin: 10px 0 0 40px; }
     header nav.navbar .nav > li {
       display: inline-block; }
       header nav.navbar .nav > li a {
         font-size: 1.3em;
         font-weight: 600;
-        padding: 10px 25px; }
+        padding: 10px 18px; }
       header nav.navbar .nav > li:hover a {
-        background-color: transparent;
-        color: #61809C; }
+        color: #61809C;
+        background-color: transparent; }
       header nav.navbar .nav > li.active a {
-        color: #fff;
+        color: #61809C;
         text-decoration: underline; }
 
 section.content {
@@ -63,6 +66,7 @@ footer {
   color: #fff; }
   footer p {
     text-align: center;
+    text-indent: 25px;
     margin-bottom: 25px; }
   footer .powered-by-continuum {
     color: transparent;
