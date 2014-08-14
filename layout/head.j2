@@ -34,24 +34,28 @@
 		<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 		<script type="text/javascript">
 		    $(document).ready(function(){
-		      var fullUrl = window.location.pathname;
-		      var urlArray = fullUrl.split('/');
-		      var currentPage = urlArray[urlArray.length-1];
-		      currentPage = currentPage.replace(".html", "")
-		      currentPage = currentPage.replace("-", " ")
-		      console.log("Current page is: "+currentPage);
-		      $('.nav li a').each(function(){
-		        value = $(this).text().toLowerCase();
-		        value = value.replace(".html", "");
-		        console.log("value is: "+value)
-		        if (value==currentPage) {
-		          $('.nav li').each(function(){
-		            $(this).removeClass('active');
-		          })
-		          $(this).parent('li').addClass('active')
-		          return false;
-		        }
-		      })
+	    		$('.nav li').each(function(){
+	            	$(this).removeClass('active');
+		      	})
+		      	var fullUrl = window.location.pathname;
+			      var urlArray = fullUrl.split('/');
+			      var currentPage = urlArray[urlArray.length-1];
+			      currentPage = currentPage.replace(".html", "")
+			      currentPage = currentPage.replace(/-/g, " ")
+			      console.log("Current page is: " + currentPage);
+			      $('.nav li a').each(function(){
+			        value = $(this).text().toLowerCase();
+			        value = value.replace(".html", "");
+			        console.log("value is: "+value)
+			        if (currentPage=='') {
+			        	$('.nav li.home').addClass('active')
+			        	return false;
+			        }
+			        else if (value==currentPage) {
+			          $(this).parent('li').addClass('active')
+			          return false;
+			        }
+			      })
 		    })
   		</script>
 	{% endblock %}

@@ -3,6 +3,9 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0em;
   color: #02213d; }
 
+h1, h2, h3 {
+  padding: 15px 0 10px 0; }
+
 h4, h5, h6 {
   padding: 8px 0 5px 0; }
 
@@ -18,12 +21,13 @@ html {
     font-size: 1.3em; }
     html body .main {
       min-height: 100%;
-      height: auto !important;
-      height: 100%;
       margin: 0 auto -150px; }
+      html body .main:after {
+        content: "";
+        display: block; }
       html body .main p {
         font-size: 1.1em; }
-    html body footer {
+    html body footer, html body .main:after {
       height: 150px; }
 
 header {

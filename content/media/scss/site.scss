@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6 {
 	color: #02213d;
 }
 h1, h2, h3 {
-	//padding: 15px 0 10px 0;
+	padding: 15px 0 10px 0;
 }
 h4, h5, h6{
 	padding: 8px 0 5px 0;
@@ -19,14 +19,16 @@ html {
 		font-size: 1.3em;
 		.main {
 			min-height: 100%;
-			height: auto !important;
-			height: 100%;
 			margin: 0 auto -150px;
+			&:after {
+				content: "";
+  				display: block;
+			}
 			p {
 				font-size: 1.1em;
 			}
 		}
-		footer {
+		footer, .main:after {
 			height: 150px;
 		}
 	}
