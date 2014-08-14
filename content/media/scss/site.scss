@@ -42,7 +42,6 @@ header {
 	}
 	nav.navbar {
 		float: left;
-		width: 80%;
 		margin: 47px 0 0 0;
 		.nav {
 			> li {
@@ -58,7 +57,7 @@ header {
 				&:hover {
 					a {
 						background-color: transparent; 
-						color: #fff;
+						color: #61809C;
 					}
 				}
 				&.active {
@@ -88,12 +87,13 @@ footer {
 	.powered-by-continuum {
 		@include noFont;
 		display: block;
-		width: 105px;
-		height: 50px;
+		width: 128px;
+		height: 55px;
 		margin: 0 auto;
+		overflow: hidden;
 		background: transparent url('/media/img/continuum-logo.png') 0 0 repeat;
 		&:hover {
-			
+			background-position: 0 -55px;
 		}
 	}
 }
