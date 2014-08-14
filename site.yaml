@@ -1,0 +1,44 @@
+mode: development # Use "hyde publish -c prod.yaml to have this automatically switch to production
+media_root: media # Relative path from content folder.
+media_url: /media # URL where the media files are served from.
+base_url: /
+
+template: hyde.ext.templates.jinja.Jinja2Template
+plugins:
+    - hyde.ext.plugins.meta.MetaPlugin
+    - hyde.ext.plugins.auto_extend.AutoExtendPlugin
+    - hyde.ext.plugins.syntext.SyntextPlugin
+    - hyde.ext.plugins.textlinks.TextlinksPlugin
+    - hyde.ext.plugins.urls.UrlCleanerPlugin
+    - hyde.ext.plugins.sorter.SorterPlugin
+    - hyde.ext.plugins.grouper.GrouperPlugin
+    - hyde.ext.plugins.tagger.TaggerPlugin
+
+
+
+context:
+    data:
+        site_title: Contimuum Analytics Blog
+        menu:
+            -
+                name: Home
+                description: Home Page
+                css_class: home
+                type: page
+                url: index.html
+simple_copy: 
+   - media/js/*
+
+meta:
+    nodemeta: meta.yaml
+    twitter: http://twitter.com/continuumio
+    keywords: "Python, Data Analytics, Data Analysis, Big Data"
+    created: !!timestamp 2012-01-01 00:00:00
+    author: PyParallel
+
+#clean urls (no html extension)
+urlcleaner:
+    index_file_names:
+        - index.html
+    strip_extensions:
+        - html

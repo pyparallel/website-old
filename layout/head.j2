@@ -1,0 +1,59 @@
+{# page header, carosel, navigation #}
+{# best pacement is right after head tag #}
+<!-- Head -->
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<title>{{ resource.meta.title }}</title>
+	{% if resource.meta.new_description %}
+		<meta name="description" content="{{resource.meta.new_description}}" />
+	{% else %}
+		<meta name="description" content="PyParallel provides software, training, and consulting for high performance computing and data visualization using Python.  "/>
+	{% endif %}
+
+	{% if resource.meta.new_keywords %}
+		<meta name="keywords" content="{{resource.meta.new_keywords}}" />
+	{% else %}
+		<meta name="keywords" content="python, big data, data exploration, data analysis, data visualization, high performance computing, consulting, training, anaconda, developer resources, open source" />
+	{% endif %}
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	{% block basecss %}
+	<link href="{{ media_url('css/bootstrap.css') }}" rel="stylesheet" type="text/css" />
+	<link href="{{ media_url('css/site.css') }}" rel="stylesheet" type="text/css" />
+	<link href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,100italic,300italic,400italic,700italic|Open+Sans:400,700,600;' rel='stylesheet' type='text/css'>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<!--[if IE]>
+		<link href="{{ media_url('css/ie.css') }}" rel="stylesheet" type="text/css" />
+	<![endif]-->
+
+	{% endblock basecss %}
+
+		<link rel="shortcut icon" href="{{ media_url('img/favicon.ico') }}" />
+		<link rel="icon" type="image/ico" href="{{ media_url('img/favicon.ico') }}" />
+		{% block script %}
+		<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript">
+		    $(document).ready(function(){
+		      var fullUrl = window.location.pathname;
+		      var urlArray = fullUrl.split('/');
+		      var currentPage = urlArray[urlArray.length-1];
+		      currentPage = currentPage.replace(".html", "")
+		      currentPage = currentPage.replace("-", " ")
+		      console.log("Current page is: "+currentPage);
+		      $('.nav li a').each(function(){
+		        value = $(this).text().toLowerCase();
+		        value = value.replace(".html", "");
+		        console.log("value is: "+value)
+		        if (value==currentPage) {
+		          $('.nav li').each(function(){
+		            $(this).removeClass('active');
+		          })
+		          $(this).parent('li').addClass('active')
+		          return false;
+		        }
+		      })
+		    })
+  		</script>
+	{% endblock %}
+
+<!-- end Head -->

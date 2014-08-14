@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    {% include "head.j2" %}
+    <style>
+      .content, .content_center { background-image: none; background-color: #FFFFFF; }
+      .form_standard { background: url(/media/img/inner_form_background.png); }
+      .blog_title { margin-bottom: 20px; }
+      .blog_content { margin-bottom: 20px; }
+      p { margin-right: 20px; }
+    </style>
+  </head>
+  <script src="{{ media_url('js/rss_script.js') }}"></script>
+  <body>
+    <section class="main">
+      {% include "header.j2" %}
+      {% block content %}
+      {% endblock %}
+    </section>
+    {% include "footer.j2" %}
+  </body>
+</html>

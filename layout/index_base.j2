@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<!--[if IE 8]>    
+	<html class="ie8"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html>
+<!--<![endif]-->
+	<head>
+	{% include "head.j2" %}
+	</head>
+	<body>
+		<section class="main">
+			{% include "header.j2" %}
+			{% block content %}
+			{% endblock %}
+		</section>
+		{% include "footer.j2" %}
+	</body>
+</html>
